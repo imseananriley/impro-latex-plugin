@@ -1,13 +1,17 @@
 {
   "name": "impro-latex-plugin",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "node build.js",
-    "dev": "node build.js --watch"
+    "dev": "node build.js --watch",
+    "setup:katex": "node scripts/copy-katex-assets.js"
   },
   "devDependencies": {
     "esbuild": "^0.25.10"
+  },
+  "dependencies": {
+    "katex": "^0.16.25"
   }
 }

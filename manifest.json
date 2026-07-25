@@ -1,8 +1,30 @@
 {
   "id": "impro-latex",
   "name": "LaTeX Math",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Impro Contributor",
-  "description": "Render LaTeX math ($...$ and $$...$$) as Unicode in your posts",
-  "permissions": {}
+  "description": "Full LaTeX math rendering with KaTeX — $...$ for inline, $$...$$ for display",
+  "permissions": {},
+  "fonts": [
+    { "family": "KaTeX_AMS", "file": "fonts/KaTeX_AMS-Regular.woff2" },
+    { "family": "KaTeX_Caligraphic", "file": "fonts/KaTeX_Caligraphic-Bold.woff2", "weight": "bold" },
+    { "family": "KaTeX_Caligraphic", "file": "fonts/KaTeX_Caligraphic-Regular.woff2" },
+    { "family": "KaTeX_Fraktur", "file": "fonts/KaTeX_Fraktur-Bold.woff2", "weight": "bold" },
+    { "family": "KaTeX_Fraktur", "file": "fonts/KaTeX_Fraktur-Regular.woff2" },
+    { "family": "KaTeX_Main", "file": "fonts/KaTeX_Main-Bold.woff2", "weight": "bold" },
+    { "family": "KaTeX_Main", "file": "fonts/KaTeX_Main-BoldItalic.woff2", "weight": "bold", "style": "italic" },
+    { "family": "KaTeX_Main", "file": "fonts/KaTeX_Main-Italic.woff2", "style": "italic" },
+    { "family": "KaTeX_Main", "file": "fonts/KaTeX_Main-Regular.woff2" },
+    { "family": "KaTeX_Math", "file": "fonts/KaTeX_Math-BoldItalic.woff2", "weight": "bold", "style": "italic" },
+    { "family": "KaTeX_Math", "file": "fonts/KaTeX_Math-Italic.woff2", "style": "italic" },
+    { "family": "KaTeX_SansSerif", "file": "fonts/KaTeX_SansSerif-Bold.woff2", "weight": "bold" },
+    { "family": "KaTeX_SansSerif", "file": "fonts/KaTeX_SansSerif-Italic.woff2", "style": "italic" },
+    { "family": "KaTeX_SansSerif", "file": "fonts/KaTeX_SansSerif-Regular.woff2" },
+    { "family": "KaTeX_Script", "file": "fonts/KaTeX_Script-Regular.woff2" },
+    { "family": "KaTeX_Size1", "file": "fonts/KaTeX_Size1-Regular.woff2" },
+    { "family": "KaTeX_Size2", "file": "fonts/KaTeX_Size2-Regular.woff2" },
+    { "family": "KaTeX_Size3", "file": "fonts/KaTeX_Size3-Regular.woff2" },
+    { "family": "KaTeX_Size4", "file": "fonts/KaTeX_Size4-Regular.woff2" },
+    { "family": "KaTeX_Typewriter", "file": "fonts/KaTeX_Typewriter-Regular.woff2" }
+  ]
 }
