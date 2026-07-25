@@ -9,6 +9,26 @@ const INLINE_RE = /(?<!\$)\$(?!\$)([^\n$]+?)(?<!\$)\$(?!\$)/g;
 
 // ── Rendering ───────────────────────────────────────────────────────────────
 
+// HTML tags allowed by PluginRenderer; everything else gets downgraded to <span>
+const ALLOWED_TAGS = new Set([
+  "div", "span", "a", "img", "button", "input", "select", "option",
+  "textarea", "p", "h1", "h2", "h3", "h4", "h5", "h6",
+  "ul", "ol", "li", "table", "thead", "tbody", "tr", "td", "th",
+  "br", "hr", "strong", "em", "b", "i", "u", "s", "small", "code", "pre",
+  "label", "fieldset", "legend", "section", "article", "nav",
+  "header", "footer", "main", "aside", "dialog",
+]);
+
+// Strip MathML (`<math>`, `<semantics>`, `<mrow>`, etc.) from KaTeX output —
+// the PluginRenderer only accepts HTML/SVG, not MathML.
+function stripMathML(html) {
+  // Remove the <span class="katex-mathml"> subtree
+  return html.replace(
+    /<span class="katex-mathml"[^>]*>[\s\S]*?<\/span>/i,
+    "",
+  );
+}
+
 function renderLaTeX(formula, displayMode) {
   try {
     const html = katex.renderToString(formula, {
@@ -16,7 +36,7 @@ function renderLaTeX(formula, displayMode) {
       throwOnError: false,
       strict: "ignore",
     });
-    return htmlToVirtualTree(html);
+    return htmlToVirtualTree(stripMathML(html));
   } catch (e) {
     // Fallback: show the raw formula
     console.warn("[impro-latex] KaTeX render failed:", formula, e);

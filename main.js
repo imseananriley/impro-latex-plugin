@@ -15134,6 +15134,12 @@ function htmlToVirtualTree(html) {
 }
 
 // src/main.js
+function stripMathML(html) {
+  return html.replace(
+    /<span class="katex-mathml"[^>]*>[\s\S]*?<\/span>/i,
+    ""
+  );
+}
 function renderLaTeX(formula, displayMode) {
   try {
     const html = katex.renderToString(formula, {
@@ -15141,7 +15147,7 @@ function renderLaTeX(formula, displayMode) {
       throwOnError: false,
       strict: "ignore"
     });
-    return htmlToVirtualTree(html);
+    return htmlToVirtualTree(stripMathML(html));
   } catch (e) {
     console.warn("[impro-latex] KaTeX render failed:", formula, e);
     return {
