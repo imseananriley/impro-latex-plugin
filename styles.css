@@ -1,0 +1,7 @@
+/* LaTeX Math Plugin - displays formulas as Unicode in posts */
+/* Core KaTeX fonts + CSS are provided by the Impro host */
+
+.latex-math-display {
+  text-align: center;
+  margin: 0.5em 0;
+}

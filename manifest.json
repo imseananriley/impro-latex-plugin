@@ -1,0 +1,8 @@
+{
+  "id": "impro-latex",
+  "name": "LaTeX Math",
+  "version": "0.1.0",
+  "author": "Impro Contributor",
+  "description": "Render LaTeX math ($...$ and $$...$$) as Unicode in your posts",
+  "permissions": {}
+}
