@@ -15169,7 +15169,7 @@ function transformTokens(tokens) {
       result.push(token);
       continue;
     }
-    const combinedRe = /(\$\$([^$]*?)\$\$)|(?<!\$)\$(?!\$)([^\n$]+?)(?<!\$)\$(?!\$)/g;
+    const combinedRe = /((?<!\\)\$\$([^$]*?)\$\$)|(?<![\\$])\$(?![\s$])([^\n$]*?\S)\$(?![\d$])/g;
     let lastIndex = 0;
     let match;
     while ((match = combinedRe.exec(text2)) !== null) {

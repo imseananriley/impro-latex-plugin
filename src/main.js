@@ -1,11 +1,7 @@
 import { Plugin } from "@impro.social/impro-plugin";
 import katex from "katex";
+import { createMathRegex } from "./detection.js";
 import { htmlToVirtualTree } from "./parseHtml.js";
-
-// ── Detection ───────────────────────────────────────────────────────────────
-
-const DISPLAY_RE = /\$\$([^$]*?)\$\$/g;
-const INLINE_RE = /(?<!\$)\$(?!\$)([^\n$]+?)(?<!\$)\$(?!\$)/g;
 
 // ── Rendering ───────────────────────────────────────────────────────────────
 
@@ -64,8 +60,7 @@ function transformTokens(tokens) {
     }
 
     // Match display and inline math
-    const combinedRe =
-      /(\$\$([^$]*?)\$\$)|(?<!\$)\$(?!\$)([^\n$]+?)(?<!\$)\$(?!\$)/g;
+    const combinedRe = createMathRegex();
     let lastIndex = 0;
     let match;
 

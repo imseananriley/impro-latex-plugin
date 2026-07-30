@@ -9,6 +9,9 @@ Write math in your posts using standard LaTeX delimiters:
 - **Inline**: `$E = mc^2$` → E = mc²
 - **Display**: `$$\int_0^\infty e^{-x^2} dx$$` → centered equation
 
+Inline delimiters must touch their formula (`$x$`, not `$ x $`). Escaped dollar
+signs and ordinary currency amounts such as `$5 and $10` remain plain text.
+
 ## Supported notation
 
 - Greek letters: `\alpha`, `\beta`, `\Gamma`, `\Omega`, etc.
