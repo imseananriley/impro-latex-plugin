@@ -1,7 +1,7 @@
 {
   "id": "impro-latex",
   "name": "LaTeX Math",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Impro Contributor",
   "description": "Full LaTeX math rendering with KaTeX — $...$ for inline, $$...$$ for display",
   "permissions": {},
